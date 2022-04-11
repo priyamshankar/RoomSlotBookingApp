@@ -1,0 +1,45 @@
+Create a Room Slot Booking Django Project that does the following;
+
+    Authenticate the user
+
+        Allow new users to sign up
+
+        Allow existing users to sign in
+
+    Users are of two types: Room Manager & Customer.
+
+    Room Manager should be able to define the number of Rooms available.
+
+    A Room Manager can define the Time Slots for which a Room is available every day.
+
+    Time slots are constantly recurring.
+
+    A Customer can book a Room and a corresponding Time Slot, once booked, the Room cannot be booked by another Customer for that Time Slot.
+
+    Allow only an authenticated user to Book or set Rooms
+
+    A Customer should only be able to book a Room ‘x’ days in advance. Room Manager should be able to define the number of days ‘x’.
+
+    Only Room Manager can add, delete or change his own number of Rooms and Time Slots.
+
+    A Customer should be able to view and delete only his own bookings
+
+    Room Manager should be able to view a summary of all bookings, occupancies and occupant customer details.
+
+    The customer should be able to see all of his own (past and future) bookings, occupancies and room manager.
+
+    Write Test Cases for your Django App.
+
+    Bonus Points for creating API endpoints for User management, Rooms, Time Slots, and corresponding Bookings.
+
+Technologies/Libraries to use:
+
+    Django
+
+    Python (if you want to recap you can take this course )
+
+    HTML
+
+    Javascript (Optional)
+
+    Git
