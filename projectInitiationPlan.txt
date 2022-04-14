@@ -1,0 +1,28 @@
+room manageer should define the no. of rooms available.
+
+room manager should define the time slots.
+
+time slots are constantly recurring
+
+room cannot be booked by another customer
+
+manager should define the no. of days of advance booking
+
+customer can crud its own bookings
+
+room manager can see all the details
+
+the customer can see the past and future bookings.
+
+******************************************************
+
+
+dynamic fields --- no. of rooms, time slots, no. of days of advance booking
+
+entities:-----  customer, manager, room, rules, booking, prevTable
+
+customer--- cId, name, userid ,password ((same for manager))
+room--- rid,  is_booked,
+rules--- no. of rooms, time slots, no. of days of advance booking
+booking--- b_id, rid, cId, date,time slot
+prev table--- contains all the data of prev and upcoming booking +date of booking
