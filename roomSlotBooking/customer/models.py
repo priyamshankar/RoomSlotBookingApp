@@ -51,7 +51,8 @@ class booking(models.Model):
     Customers=models.ForeignKey(Customers,null=True,on_delete=models.SET_NULL)
 
     dateBooked=models.DateTimeField(auto_now_add=true,null=true)
-    timerslots=models.IntegerField()
+    # timerslots=models.IntegerField()
+    rules=models.ForeignKey(rules,null=True,on_delete=models.SET_NULL)
 
 class records(models.Model):
     booking=models.ForeignKey(booking,null=true,on_delete=models.SET_NULL)
