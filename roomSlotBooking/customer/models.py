@@ -53,6 +53,15 @@ class booking(models.Model):
     dateBooked=models.DateTimeField(auto_now_add=true,null=true)
     # timerslots=models.IntegerField()
     rules=models.ForeignKey(rules,null=True,on_delete=models.SET_NULL)
+    DAYSLOT=(
+        ('fullDay','fullday'),
+        ('6am to 10am','6am to 10am'),
+        ('10am to 3pm','10am to 3pm'),
+        ('3pm to 10pm','3pm to 10pm'),
+        ('10pm to 6am','10pm to 6am')
+    )
+    timeslots=models.CharField(max_length=200,choices=DAYSLOT)
+    #time slots are temproary for now but later it will be fetched from the table
 
 class records(models.Model):
     booking=models.ForeignKey(booking,null=true,on_delete=models.SET_NULL)

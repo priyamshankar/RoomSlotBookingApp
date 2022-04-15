@@ -12,15 +12,15 @@
         <td>booking date</td>
         <td>date booked</td>
     </tr>
-</table>
+{% comment %} </table> {% endcomment %}
 {% for i in booking%}
 
-<table>
+{% comment %} <table> {% endcomment %}
   <tr>
       <td>{{ i.room.isBooked }}</td>
       <td>{{ i.Customers.name }}</td>
       <td>{{ i.Customers.userId }}</td>
-      <td>{{ i.rules.timeslots }}</td>
+      <td>{{ i.timeslots }}</td>
       <td>{{ i.rules.advanceBooking }}</td>
       <td>{{ i.dateBooked }}</td>
   </tr>
