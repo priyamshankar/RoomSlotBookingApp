@@ -1,7 +1,29 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %} This is the booking page
+<br />
+<br />
+<br />
+<br />
+<table>
+    <tr>
+        <td>if booked</td>
+        <td>name</td>
+        <td>id</td>
+        <td>timeslots</td>
+        <td>booking date</td>
+        <td>date booked</td>
+    </tr>
+</table>
+{% for i in booking%}
 
-{% block content %}
+<table>
+  <tr>
+      <td>{{ i.room.isBooked }}</td>
+      <td>{{ i.Customers.name }}</td>
+      <td>{{ i.Customers.userId }}</td>
+      <td>{{ i.rules.timeslots }}</td>
+      <td>{{ i.rules.advanceBooking }}</td>
+      <td>{{ i.dateBooked }}</td>
+  </tr>
+</table>
 
-
-
-{% endblock content %}
+{% endfor %} {% endblock content %}
