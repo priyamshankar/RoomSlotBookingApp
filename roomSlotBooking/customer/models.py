@@ -26,6 +26,7 @@ class room(models.Model):
 
     isBooked=models.BooleanField(default=false)
 
+
 class rules(models.Model):
     EARLYBOOK = (
         ('oneday','oneday'),
@@ -46,12 +47,17 @@ class rules(models.Model):
     advanceBooking=models.CharField(max_length=200,choices=EARLYBOOK)
 
 class booking(models.Model):
+    room=models.ForeignKey(room,null=True,on_delete=models.SET_NULL)
+    Customers=models.ForeignKey(Customers,null=True,on_delete=models.SET_NULL)
+
     dateBooked=models.DateTimeField(auto_now_add=true,null=true)
     timerslots=models.IntegerField()
 
 class records(models.Model):
-    dateBooked=models.DateTimeField(auto_now_add=true,null=true)
-    timerslots=models.IntegerField()
-    cName=models.CharField(max_length=200,null=true)
-    userId=models.CharField(max_length=200,null=true)
-    email=models.EmailField(null=true)
+    booking=models.ForeignKey(booking,null=true,on_delete=models.SET_NULL)
+    room=models.ForeignKey(room,null=True,on_delete=models.SET_NULL)
+    Customers=models.ForeignKey(Customers,null=True,on_delete=models.SET_NULL)
+    # timerslots=models.IntegerField()
+    # cName=models.CharField(max_length=200,null=true)
+    # userId=models.CharField(max_length=200,null=true)
+    # email=models.EmailField(null=true)
