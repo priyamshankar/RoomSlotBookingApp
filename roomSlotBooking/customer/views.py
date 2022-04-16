@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from .decorators import *
 
 # Create your views here.
 
@@ -44,6 +45,7 @@ def bookingCust(request, custId):
     return render(request, 'bookingCust.html', params)
 
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['admin']) 
 def bookingCl(request):
     bookings = booking.objects.all()
 
@@ -79,7 +81,7 @@ def book(request):
     context = {'form': form, 'form2': form2}
     return render(request, 'book.html', context)
 
-
+@unauthenticated_user
 def loginpg(request):
     # if request.user == 'AnonymousUser':
     #     print(request.user)
@@ -95,7 +97,7 @@ def loginpg(request):
     
     return render(request, 'login.html')
 
-
+@unauthenticated_user
 def register(request):
     form = CreateUserForm()
     if request.method == 'POST':
