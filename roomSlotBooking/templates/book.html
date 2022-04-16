@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+this is a book page
+
+<form action="" method="POST">
+{% csrf_token %}
+{{ form }}
+{{ form2 }}
+<button type="submit">submit</button>
+</form>
+
+{% endblock content %}

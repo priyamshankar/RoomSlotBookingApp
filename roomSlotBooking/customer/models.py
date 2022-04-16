@@ -24,7 +24,7 @@ class manager(models.Model):
 
 class room(models.Model):
 
-    isBooked=models.BooleanField(default=false)
+    isBooked=models.BooleanField(default=true)
     Customers=models.ForeignKey(Customers,null=True,on_delete=models.SET_NULL)
 
 

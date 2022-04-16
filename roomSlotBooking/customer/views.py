@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
+from .forms import *
 # Create your views here.
 
 
@@ -57,3 +58,17 @@ def context(request):
     }
 
     return render(request, 'rules.html', params)
+
+
+def book(request):
+    form = bookingForm()
+    form2= roomForm()
+    if request.method == 'POST':
+        form2=roomForm(request.POST)
+        form=bookingForm(request.POST)
+        if form.is_valid and form2.is_valid():
+            form.save()
+            form2.save()
+            return redirect('/')
+    context={'form':form,'form2':form2}
+    return render(request,'book.html',context)

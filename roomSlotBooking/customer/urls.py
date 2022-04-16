@@ -7,6 +7,7 @@ urlpatterns = [
     path('',views.home, name='home'),
     path('booking/<str:custId>',views.bookingCust,name='bookingCusts'),
     path('booking/',views.bookingCl,name='booking'),
-    path('customerlist',views.customerList, name='customerList'),
-    path('rules', views.context ,name='rules')
+    path('customerlist/',views.customerList, name='customerList'),
+    path('rules/', views.context ,name='rules'),
+    path('book/',views.book, name='book')
 ]
