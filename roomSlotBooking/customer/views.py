@@ -1,4 +1,4 @@
-from cairo import FORMAT_A1
+from email.headerregistry import Group
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
@@ -103,9 +103,13 @@ def register(request):
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
         if form.is_valid():
-            form.save()
+            user=form.save()
+
+            group=Group.objects.get(name='customers')
+            user.groups.add(group)
             messages.success(request, 'account is created')
             return redirect(login)
+
     context = {'form': form}
     return render(request, 'register.html', context)
 
