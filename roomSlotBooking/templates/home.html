@@ -1,2 +1,21 @@
 {% extends 'base.html' %}
-{% block content %}this is the home page{% endblock content %}
+{% block content %}this is the home page
+
+
+<table>
+    <tr>
+        <td>No. of rooms left</td>
+        <td>total no. of room</td>
+    </tr>
+    <tr>
+        <td>{{ roomLeft }}</td>
+        <td>{{ totalroom }}</td>
+    </tr>
+</table>
+<button><a href=" {% url 'booking'%} ">see the booking details</a></button>
+<button><a href=" {% url 'rules'%} ">see the rules</a></button>
+
+
+
+
+{% endblock content %}

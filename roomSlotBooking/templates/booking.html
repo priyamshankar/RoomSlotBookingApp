@@ -23,6 +23,7 @@
       <td>{{ i.timeslots }}</td>
       <td>{{ i.rules.advanceBooking }}</td>
       <td>{{ i.dateBooked }}</td>
+      <td><button><a href="{% url 'bookingCusts' i.Customers.id%}">view</a></button></td>
   </tr>
   
   {% endfor %}

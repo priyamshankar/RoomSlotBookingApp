@@ -5,9 +5,8 @@ from customer import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home, name='home'),
-    path('booking/<str:custId>',views.bookingCust,name='booking'),
+    path('booking/<str:custId>',views.bookingCust,name='bookingCusts'),
     path('booking/',views.bookingCl,name='booking'),
-
     path('customerlist',views.customerList, name='customerList'),
     path('rules', views.context ,name='rules')
 ]
