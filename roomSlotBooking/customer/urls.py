@@ -9,5 +9,7 @@ urlpatterns = [
     path('booking/',views.bookingCl,name='booking'),
     path('customerlist/',views.customerList, name='customerList'),
     path('rules/', views.context ,name='rules'),
-    path('book/',views.book, name='book')
+    path('book/',views.book, name='book'),
+    path('login',views.login,name='login'),
+    path('register',views.register,name='register')
 ]

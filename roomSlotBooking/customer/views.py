@@ -1,6 +1,9 @@
+from cairo import FORMAT_A1
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 # Create your views here.
 
 
@@ -72,3 +75,18 @@ def book(request):
             return redirect('/')
     context={'form':form,'form2':form2}
     return render(request,'book.html',context)
+
+
+def login(request):
+    return render(request, 'login.html')
+
+def register(request):
+    form=CreateUserForm()
+    if request.method=='POST':
+        form=CreateUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'account is created')
+            return redirect(login)
+    context={'form':form}
+    return render (request,'register.html',context)
