@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <p>this is the rules page</p>
+<table>
+    <tr>
+        <td>Total no. of rooms</td>
+        <td>slot available</td>
+        <td>days of advance booking</td>
+    </tr>
+    {% for i in rule  %}
+    <tr>
+    
+        <td>{{i.totalRooms}}</td>
+        <td>{{i.timeslots}}</td>
+        <td>{{i.advanceBooking}}</td>
+    </tr>
+    
+    {% endfor %}
+</table>
+
+{% endblock content %}

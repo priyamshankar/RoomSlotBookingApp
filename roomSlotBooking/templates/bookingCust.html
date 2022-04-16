@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %} This is the booking page
+<br />
+<br />
+<br />
+<br />
+<table>
+  <tr>
+    <td>if booked</td>
+    <td>name</td>
+    <td>id</td>
+    <td>timeslots</td>
+    <td>booking date</td>
+    <td>date booked</td>
+  </tr>
+
+  {% for i in roomBook%} {% comment %} {%if roomBook == i.Customers.id%} {%
+  endcomment %} {% comment %}
+  <td>{{i.Customers.id}}</td>
+  {% endcomment %}
+  <tr>
+    <td>{{ i.room.isBooked }}</td>
+    <td>{{ i.Customers.name }}</td>
+    <td>{{ i.Customers.userId }}</td>
+    <td>{{ i.timeslots }}</td>
+    <td>{{ i.rules.advanceBooking }}</td>
+    <td>{{ i.dateBooked }}</td>
+  </tr>
+
+  {% comment %} {% endif %} {% endcomment %} {% endfor %}
+</table>
+{% endblock content %}
